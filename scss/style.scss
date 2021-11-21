@@ -1,13 +1,20 @@
 @import 'reset';
 @import 'variables';
 @import 'mixins';
+
+.display-desktop{
+    display: none;
+}
+.display-mobile{
+    display: block;
+}
+//HEADER
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100vw;
-    position: fixed;
-    top: 0;
+    min-height: 120px;
     padding: 20px 10px; 
     .menu-items{
         display: none;
@@ -18,13 +25,14 @@ header{
         color: $red;
     }
 }
+//FOOTER
 footer{
     @include body-s;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    width: 100vw;
+    width: 100%;
     gap: .5rem;
     padding: 20px 10px; 
     #copyright{
@@ -47,68 +55,378 @@ footer{
         gap: 1.5rem;
     }
 }
-/* HOME */
+main{
+    margin: 0px 10px 0px;
+}
+h1, h2{
+    @include heading-l;
+}
+h2{
+    padding: 2rem 0;
+}
+section{
+    color: $mountain-mist;
+}
+.buttons{
+    @include body-l();
+    display: flex;
+    flex-direction: column;
+    a{
+        padding: 1rem 0;
+        color: $diesel;
+        transition: all .3s ease-in-out;
+        &:after{
+            display: block;
+            content: "";
+            height: 5px;
+            transform: scaleY(.2);
+            margin-top: 1.5rem;
+            background-color: $red;
+            transition: transform .3s ease-in-out;
+          }
+        &:hover{
+            color: $red;
+        }
+        &:hover:after{
+            transform: scaleY(.8);
+        }
+    }
+}
+//HOME
 .home{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     min-height: 100vh;
-    footer{
+/*     footer{
         position: fixed;
         bottom: 0;
-    }
-    main{
-        margin: 0px 10px;
-    }
-    h1{
-        @include heading-l;
-    }
+    } */
     p.heading-xxs{
         @include heading-xxs;
         font-size: 2rem; // lo voglio leggermente più piccolo
         padding: 1.5rem 0;
     }
+}
+//CHI SONO
+.pagina{
+    @include body-m;
+    h1{
+        span{
+            color: $red;
+        }
+    }
+    #service{
+        display: none;
+    }
     .buttons{
-        @include body-l();
+        padding-bottom: 5rem;
+    }
+    .bio{
+        padding: 2rem 0;
+        color: $mountain-mist;
         display: flex;
         flex-direction: column;
-        a{
-            padding: 1rem 0;
-            color: $diesel;
-            transition: all .3s ease-in-out;
-            &:after{
-                display: block;
-                content: "";
-                height: 5px;
-                transform: scaleY(.2);
-                margin-top: 1.5rem;
-                background-color: $red;
-                transition: transform .3s ease-in-out;
-              }
-            &:hover{
+        img{
+            padding-bottom: 2rem;
+        }
+        .desc{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+    }
+    .corsi{
+        .dati{
+            order: 1;
+            padding: 0 0 3rem;
+            @include heading-xxs;
+            .label{
+                padding: 2rem 0;
+                @include body-s;
                 color: $red;
             }
-            &:hover:after{
-                transform: scaleY(.8);
+            .dati-specifici{
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                grid-template-rows: repeat(4, 1fr);
+                row-gap: 1.3rem;
+                span{
+                    color: $red;
+                }
+            }
+        }
+        .desc{
+            display: flex;
+            flex-direction: column;
+            .text{
+                order: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .logos{
+                order: 2;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                padding: 4rem 0;
+                img{max-width: 50%;}
+            }
+            .buttons{
+                order: 3;
+            }
+        }  
+    }
+    .postehack{
+        padding: 3rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        color: $grey;
+    }
+    .public-speaking{
+        article{
+            padding: 6rem 0 0;
+            h2{
+                @include heading-xxs;
+            }
+            .labels{
+                display: flex;
+                justify-content: space-between;
+                .label-left{
+                    color: $red;
+                }
+                .label-right{
+                    color: $diesel;
+                }
+            }
+            img{
+                width: 100%;
+                padding-bottom: 1.5rem;
+            }
+            .buttons{
+                padding: 1.5rem 0 0;
+                width: max-content;
+            }
+        }
+    }
+    .premi{
+        .logos{
+            padding: 4rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            img{
+                max-height: 100px;
+                max-width: 50vw;
+                padding-bottom: 1.2rem;
+            }
+            #dandad{
+                padding: 0 3rem 1.2rem;
+            }
+        }
+    }
+    .collab{
+        max-width: calc(100% - 10px);
+        background-color: $dawn-pink;
+        box-shadow: 10px 10px rgba(0,0,0,0.5);
+        padding: 10px;
+        margin-bottom: 6rem;
+        h2{
+            @include heading-s;
+            padding-top: 3rem;
+        }
+        .buttons{
+            padding-top: 2rem;
+            padding-bottom: 1rem;
+        }
+    }
+}
+// MOTTO
+.motto{
+    text-align: left;
+    background-color: $diesel;
+    padding: 0 10px 4rem;
+    h2{
+        color: $white;
+    }
+    p{
+        @include body-m;
+        color: $grey;
+    }
+}
+
+// SERVIZI
+.pagina.servizi{
+    h1{
+        padding-bottom: 5rem;
+    }
+    .strategia-esperienza{
+        span{
+            color: $red;
+        }
+        .desc{
+            display: flex;
+            flex-direction: column;
+            p{
+                padding-bottom: 2rem;
+            }
+            h3{
+                @include body-s;
+                font-weight: bold;
+                padding-bottom: 1rem;
+            }
+        }
+    }
+    .scoperta-analisi{
+        .desc.display-mobile{
+            p{
+                padding-bottom: 2rem;
+            }
+        }
+    }
+    .accordion.display-mobile{
+        padding: 2rem 0;
+        h2{
+            @include heading-s;
+        }
+    }
+}
+.pagina.collaborazione{
+    span{
+        color: $red;
+    }
+    .brand{
+        h3{
+            text-align: center;
+            color: $diesel;
+            font-weight: bold;
+        }
+        padding-bottom: 3rem;
+    }
+    .mobile-logo-group{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .come-collaboro{
+        p{
+            padding-bottom: 2rem;
+        }
+    }
+    .buttons.display-desktop{
+        display: none;
+    }
+}
+
+.contattami{
+    h2{
+        text-align: center;
+        padding-bottom: 5rem;
+    }
+    p{
+        text-align: center;
+    }
+    .buttons{
+        padding: 2rem 0;
+        @include body-m;
+    }
+    .contact-form{
+        padding: 4rem 0;
+    }
+    form{
+        input[type=text]{
+            @include body-s;
+            color: $pumice;
+            opacity: .77;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid $pumice;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            display: block;
+            &:focus{
+                outline: none
+            }
+            ::placeholder{
+                color: $pumice;
+                opacity: .77;
+            }
+        }
+       /* input[type=radio]{
+             -webkit-appearance: none;
+            background-color: #fafafa;
+            border: 1px solid $diesel;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+            padding: 9px;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            &:active, &:checked:active {
+                box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+            }
+            &:checked {
+                background-color: $red;
+                box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+                color: #99a1a7;
+            }
+             */
+        }
+        
+        .checklist{
+            padding: 4rem 0;
+            display: flex;
+            align-self: flex-start;
+            text-align: left;
+            flex-direction: column;
+            h3{
+                text-transform: uppercase;
+                font-size: 1rem;
+                padding-bottom: 3rem;
+                color: $red;
+            }
+            label{
+                @include heading-s;
+            }
+            .checklist-item{
+                padding: 2rem 1rem;
+                display: flex;
+                align-items: center;
+                gap: 2rem;
             }
         }
     }
 }
+// ----------- MEDIA 900px ---------------
 @media(min-width: 900px){
+    .display-desktop{
+        display: block;
+    }
+    .display-mobile{
+        display: none;
+    }
     header{
         @include objectsans-regular;
+        position: fixed;
+        top: 0;
         padding: 20px 40px; 
+        background-color: white;
+        z-index: 2000;
         .open-menu{
             display: none;
         }
         .menu-items{
             display: flex;
-            width: 50vw;
+            max-width: 70vw;
             justify-content: space-between;
             a{
                 color: $diesel;
                 opacity: .5;
+                padding: 0 1rem;
             }
             .language{
                 opacity: 1;
@@ -134,21 +452,378 @@ footer{
             display: none;
         }        
     }
+    main{
+        margin: 130px 40px 0; 
+    }
+    h1, h2{
+        @include heading-xxl;
+        padding: 2rem 0;
+    }
+    section{
+        padding: 3rem;
+    }
+    .buttons{
+        flex-direction: row;
+        padding: 3rem 0;
+        gap: 5rem;
+        a{
+            padding: 1.5rem 0;
+        }
+    }
     .home{
         main{
-            margin: 0px 40px; 
+            padding-top: 120px;
         }
+    }
+    //CHI SONO
+    body{
+        position: relative;
+    }
+    .pagina{
         h1{
-            @include heading-xxl;
-            padding: 2rem 0;
+            padding: 3rem 10rem;
+        }
+        #service{
+            display: inline;
+        }
+        .bio{
+            flex-direction: row;
+            gap: 10rem;
+            padding: 3rem;
+            img{
+                order: 1;
+                height: 100%;
+            }
+            .desc{
+                transform: translateY(100px);
+                z-index: -1;
+            }
         }
         .buttons{
-            flex-direction: row;
-            padding: 3rem 0;
-            gap: 5rem;
-            a{
-                padding: 1.5rem 0;
+            padding: 8rem 3rem;
+        }
+        .corsi{
+            display: grid;
+            grid-template-columns: 1fr 1.7fr;
+            align-items: start;
+            column-gap: 3rem;
+            h2{
+                grid-column-start: 2;
+                grid-column-end: 3;
+            }
+            .dati{
+                order: 0;
+                padding: 0;
+                @include heading-l;
+                .label{
+                    padding-top:0;
+                    @include body-m;
+                }
+            }
+            .desc{                
+                .buttons{
+                    padding: 0;
+                }
+                .logos{
+                    padding: 6rem 0;
+                }
+            }
+        }
+        .postehack{
+            padding: 10rem 0;
+            img, p{
+                padding: 0 3rem;
+            }
+            #postehack1{
+                align-self: flex-start;
+            }
+            #postehack2{
+                align-self: flex-end;
+            }
+        }
+        .public-speaking{
+            .subtitle{
+                max-width: 60vw;
+            }
+            .articles{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 20rem;
+                padding-bottom: 5rem;
+                .right{
+                    padding-top: 30rem;
+                }
+            }
+        }
+        .premi{
+            .subtitle{
+                max-width: 60vw;
+            }
+            .logos{
+                img{
+                    max-width: 100%;
+                    max-height: 150px;
+                }
+            }
+        }
+        .collab{
+            max-width: 80vw;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 10px 10px rgba(0,0,0,0.5);
+            h2{
+                text-align: center;
+                @include heading-xl;
+            }
+            .subtitle{
+                text-align: center;
+            }
+            .buttons{
+                display: flex;
+                justify-content: center;
             }
         }
     }
+    .motto{
+        text-align: center;
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: 0;
+        h2, p{
+            z-index: 1;
+            position: relative;
+        }
+        p{
+            @include body-l;
+        }
+        .circle{
+            position: absolute;
+            bottom: 0;
+            left: calc(50% - 1056px/2);
+            z-index: 0;
+        }
+    }
+    .motto.display-mobile{
+        display: none;
+    }
+    footer.black-bg{
+        background-color: $diesel;
+        color: $grey;
+    }
+
+    // SERVIZI
+    .pagina.servizi{
+        .collab.display-desktop{
+            .buttons{
+                padding-top: 2rem;
+            }
+        }
+        .accordion.display-desktop{   
+            h2{
+                @include heading-xl;
+                border-bottom: .5px solid $grey;
+                color: $diesel;
+            }
+        }
+        .buttons{
+            padding-top: 0;
+        }
+        .scoperta-analisi{
+            text-align: center;
+            .label{
+                font-weight: bold;
+                color: $red;
+            }
+            .triangles{
+                padding: 3rem 0;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .desc{
+                text-align: center;
+                padding: 8rem;
+                p{
+                    padding-bottom: 1.5rem;
+                }
+            }
+        }
+        .kickoff{
+            background-color: $dawn-pink;
+            margin: 0 -40px;
+            h2{
+                text-align: center;
+                @include heading-xl;
+                color: $diesel;
+                border-bottom: .5px solid $grey;
+            }
+            .grid{
+                color: $diesel;
+                padding: 5rem;    
+                display: grid;
+                grid-template-columns: 2.5fr 1fr;
+                column-gap: 3rem;
+                .desc{
+                    p{
+                        padding-bottom: 4rem; 
+                    }
+                    h3{
+                        padding-bottom: 1.5rem;
+                        @include heading-xs;
+                    }
+                }
+                .labels{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4rem;
+                }
+                .label{
+                    font-weight: bold;
+                    letter-spacing: .8px;
+                    padding-bottom: .5rem;
+                }
+                
+            }
+        }
+    }
+    .motto-servizi{
+        position: relative;
+        text-align: left;
+        padding: 8rem;
+        span{
+            @include canela-italic;
+        }
+    }
+    .pagina.collaborazione{
+        .brand{
+            padding-bottom: 8rem;
+            .label{
+                letter-spacing: 2px;
+                padding-bottom: 2rem;
+            }
+        }
+        .come-collaboro{
+            text-align: center;
+            .desc{
+                text-align: left;
+            }
+            .buttons{
+                justify-content: center;
+            }
+        }
+        .articles{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 15rem;
+            padding-bottom: 5rem;
+            .right{
+                padding-top: 10rem;
+            }
+            article{
+                display: flex;
+                gap: 3rem;
+                padding: 6rem 0;
+                h3.label-left{
+                    @include heading-l;
+                }
+                h3.title{
+                    color: $diesel;
+                    padding-bottom: 1rem;
+                }
+            }
+        
+        }
+        .agenzie-digitali{
+            h2{
+                @include heading-xl;
+                color: $diesel;
+            }
+            p{
+                text-align: center;
+                padding: 2rem 0 4rem;
+            }
+            .label{
+                letter-spacing: 2px;
+                padding-bottom: 2rem;
+                color: $diesel;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            .attivita{
+                @include body-xl;
+                display: flex;
+                gap: 3rem;
+                flex-wrap: wrap;
+                justify-content: center;
+                color: $mountain-mist;
+                p{
+                    padding: 1.5rem;
+                    border: 1px solid $pumice;
+                }
+            }
+            .contratto{
+                padding: 5rem 0;
+                text-align: left;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                .label{
+                    padding: 1rem 0;
+                }
+                p{
+                    text-align: left;
+                    padding: 0;
+                }
+            }
+            .logos{
+                display: flex;
+                justify-content: center;
+                padding: 2rem 0;
+                img{
+                    max-width: 35%;
+                }
+            }
+        }
+        .vuoi-collaborare{
+            margin: 0px calc(-48px - 3rem);
+            padding: 8rem 15rem 8rem 10rem;
+            text-align: left;
+            background-color: $dawn-pink;
+            h3{
+                @include heading-xs;
+                color: $diesel;
+                padding-bottom: 3rem;
+            }
+            .buttons{
+                padding: 0;
+                justify-content: left;
+            }
+        }
+        .alcuni-progetti{
+            text-align: left;
+            padding-left: 0;
+        }
+    }
+    .contattami{
+        .buttons{
+            display: flex;
+            justify-content: center;
+        }
+        form{
+            padding: 0 8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            input[type=text]{
+                @include body-l;
+                text-align: left;
+            }
+            .checklist{
+                label{
+                    @include heading-l;
+                }
+            }
+        }
+    }
+    
 }
