@@ -649,7 +649,7 @@ section {
 }
 
 .pagina.servizi h1 {
-  padding-bottom: 5rem;
+  padding-bottom: 2rem;
 }
 .pagina.servizi .strategia-esperienza span {
   color: #F84D35;
@@ -973,6 +973,33 @@ section {
     opacity: 1;
   }
 }
+.slider {
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.slider-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  pointer-events: none;
+  -webkit-transition: 0s ease-in;
+  transition: 0s ease-in;
+}
+.slider-inner img {
+  min-width: 100%;
+}
+
+.project-label {
+  color: #F84D35;
+}
+
 @media (min-width: 900px) {
   #open-menu, aside, #menu-control {
     display: none;
@@ -1265,6 +1292,9 @@ section {
     color: #9A9A9A;
   }
 
+  .pagina.servizi h1 {
+    padding-bottom: 5rem;
+  }
   .pagina.servizi .collab.display-desktop .buttons {
     padding-top: 2rem;
   }
@@ -1505,6 +1535,10 @@ section {
     text-align: left;
     padding-left: 0;
   }
+  .pagina.collaborazione .alcuni-progetti .slide-img img {
+    -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  }
 
   .contattami .buttons {
     display: -webkit-box;
@@ -1547,5 +1581,14 @@ section {
 
   .accordion-content.active p {
     padding: 2rem;
+  }
+
+  .slider {
+    min-height: 700px;
+    margin-top: 5rem;
+  }
+
+  .slider-inner {
+    gap: 30px;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -385,7 +385,7 @@ section{
 // SERVIZI
 .pagina.servizi{
     h1{
-        padding-bottom: 5rem;
+        padding-bottom: 2rem;
     }
     .strategia-esperienza{
         span{
@@ -628,6 +628,29 @@ section{
         opacity: 1;
     }
 }
+.slider{
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+}
+.slider-inner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    pointer-events: none;
+    transition: 0s ease-in;
+    img{
+        min-width: 100%;
+    }
+}
+.project-label{
+    color: $red;
+}
 
 // ----------- MEDIA 900px ---------------
 
@@ -852,6 +875,9 @@ section{
 
     // SERVIZI
     .pagina.servizi{
+        h1{
+            padding-bottom: 5rem;
+        }
         .collab.display-desktop{
             .buttons{
                 padding-top: 2rem;
@@ -1040,6 +1066,9 @@ section{
         .alcuni-progetti{
             text-align: left;
             padding-left: 0;
+            .slide-img img{
+                box-shadow: 0px 10px 10px rgba(0,0,0,.1);
+            }
         }
     }
     .contattami{
@@ -1065,5 +1094,12 @@ section{
     }
     .accordion-content.active p{
         padding: 2rem;
+    }
+    .slider{
+        min-height: 700px;
+        margin-top: 5rem;
+    }
+    .slider-inner {
+        gap: 30px;
     }
 }
