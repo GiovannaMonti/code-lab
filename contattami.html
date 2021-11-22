@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contattami</title>
     <link rel="stylesheet" href="css/style.css">
-    <script type="module" src="index.js"></script>
+    <script type="module" src="js/index.js"></script>
 </head>
 <body>
     <label for="menu-control" class="hamburger open-menu closed" id="open-menu">
@@ -90,7 +90,7 @@
                 </div>
             </section>
             <section class="contact-form">
-                <form action="">
+                <form id="contact-me" action="">
                     <input type="text" placeholder="Lasciami il tuo nome così potrò sapere chi sei">
                     <input type="text" placeholder="Inserisci una mail dove potrò risponderti">
                     <div class="checklist">
@@ -176,7 +176,7 @@
                     <h3 class="label" id="lascia-messaggio">LASCIAMI UN MESSAGGIO<span id="opzionale">Opzionale</span></h3>
                     <input type="text" placeholder="Cosa vuoi dirmi?">
                     <div class="buttons">
-                        <a href="#" id="invia">Invia richiesta</a>
+                        <button type="submit" id="invia" form="contact-me">Invia richiesta</button>
                     </div>
                 </form>
                 

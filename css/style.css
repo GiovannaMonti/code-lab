@@ -48,6 +48,14 @@ img {
   font-family: ObjectSans-Medium;
   src: url(../fonts/ObjectSans-Medium.otf);
 }
+.display-desktop {
+  display: none;
+}
+
+.display-mobile {
+  display: block;
+}
+
 .logo, #open-menu {
   z-index: 3000;
 }
@@ -75,6 +83,12 @@ img {
 }
 
 .sidebar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   z-index: 2000;
   height: 100vh;
   width: 300px;
@@ -83,8 +97,6 @@ img {
   top: 0;
   left: 0;
   padding: 0 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -233,14 +245,6 @@ img {
 .menu-control:checked + .sidebar .sidebar__menu a {
   -webkit-transform: translatex(0);
           transform: translatex(0);
-}
-
-.display-desktop {
-  display: none;
-}
-
-.display-mobile {
-  display: block;
 }
 
 .open-menu {
@@ -807,6 +811,74 @@ section {
   color: #9A9A9A;
   padding-left: 6rem;
 }
+.contattami form .buttons #invia {
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-family: "ObjectSans-Regular";
+  font-weight: normal;
+  letter-spacing: 0.4px;
+  font-size: 1.125rem;
+  line-height: 20px;
+  text-align: center;
+  padding: 1rem 0;
+  color: #F84D35;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.contattami form .buttons #invia:after {
+  display: block;
+  content: "";
+  height: 5px;
+  -webkit-transform: scaleY(0.2);
+          transform: scaleY(0.2);
+  margin-top: 1.5rem;
+  background-color: #F84D35;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+.contattami form .buttons #invia:hover {
+  color: #F84D35;
+}
+.contattami form .buttons #invia:hover:after {
+  -webkit-transform: scaleY(0.8);
+          transform: scaleY(0.8);
+}
+.contattami form #invia {
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding: 1rem 0;
+  color: #0C0B0B;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.contattami form #invia:after {
+  display: block;
+  content: "";
+  height: 5px;
+  -webkit-transform: scaleY(0.2);
+          transform: scaleY(0.2);
+  margin-top: 1.5rem;
+  background-color: #F84D35;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+.contattami form #invia:hover {
+  color: #F84D35;
+}
+.contattami form #invia:hover:after {
+  -webkit-transform: scaleY(0.8);
+          transform: scaleY(0.8);
+}
 .contattami form .checklist {
   padding: 4rem 0;
   display: -webkit-box;
@@ -845,6 +917,62 @@ section {
   gap: 2rem;
 }
 
+/* stile accordion */
+.accordion-toggle {
+  display: block;
+  text-decoration: none;
+  color: #0C0B0B;
+}
+
+/* nascondiamo in partenza i testi */
+.accordion-content {
+  display: none;
+}
+
+/* con il click + js aggiungiamo la classe active */
+.accordion-content.active {
+  display: block;
+}
+
+.accordion-content.active p {
+  padding-bottom: 2rem;
+}
+
+/* CSS per animazione faq*/
+.accordion-content.active p {
+  opacity: 1;
+  /* fallback se non funziona l'animation */
+  -webkit-animation-name: fadeInOpacity;
+          animation-name: fadeInOpacity;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+}
+
+@-webkit-keyframes fadeInOpacity {
+  0% {
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @media (min-width: 900px) {
   #open-menu, aside, #menu-control {
     display: none;
@@ -1415,5 +1543,9 @@ section {
     font-size: 4rem;
     line-height: 80px;
     color: #0C0B0B;
+  }
+
+  .accordion-content.active p {
+    padding: 2rem;
   }
 }/*# sourceMappingURL=style.css.map */

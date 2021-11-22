@@ -2,6 +2,14 @@
 @import 'variables';
 @import 'mixins';
 
+.display-desktop{
+    display: none;
+}
+.display-mobile{
+    display: block;
+}
+
+// HEADER MOBILE
 .logo, #open-menu{
     z-index: 3000;
 }
@@ -19,6 +27,8 @@
   }
   
   .sidebar {
+    display: flex;
+    align-items: center;
     z-index: 2000;
     height: 100vh;
     width: 300px;
@@ -63,7 +73,7 @@
       }
     }
     
-    &__menu { //it's means sidebar__menu
+    &__menu { 
       display: flex;
       flex-direction: column;
       flex: 1;
@@ -120,12 +130,6 @@
       }
     }
   }
-.display-desktop{
-    display: none;
-}
-.display-mobile{
-    display: block;
-}
 //HEADER
 .open-menu{
     @include body-s;
@@ -510,6 +514,61 @@ section{
                 padding-left: 6rem;
             }
         }
+        .buttons{
+            #invia{
+                border:none;
+                background-image:none;
+                background-color:transparent;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+                @include body-l();
+                padding: 1rem 0;
+                color: $red;
+                transition: all .3s ease-in-out;
+                &:after{
+                    display: block;
+                    content: "";
+                    height: 5px;
+                    transform: scaleY(.2);
+                    margin-top: 1.5rem;
+                    background-color: $red;
+                    transition: transform .3s ease-in-out;
+                }
+                &:hover{
+                    color: $red;
+                }
+                &:hover:after{
+                    transform: scaleY(.8);
+                }
+            }
+        }
+        #invia{
+            border:none;
+            background-image:none;
+            background-color:transparent;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            padding: 1rem 0;
+        color: $diesel;
+        transition: all .3s ease-in-out;
+        &:after{
+            display: block;
+            content: "";
+            height: 5px;
+            transform: scaleY(.2);
+            margin-top: 1.5rem;
+            background-color: $red;
+            transition: transform .3s ease-in-out;
+          }
+        &:hover{
+            color: $red;
+        }
+        &:hover:after{
+            transform: scaleY(.8);
+        }
+        }
         .checklist{
             padding: 4rem 0;
             display: flex;
@@ -534,6 +593,42 @@ section{
         }
     }
 }
+
+/* stile accordion */
+.accordion-toggle{
+    display: block;
+    text-decoration: none;
+    color: $diesel;
+}
+/* nascondiamo in partenza i testi */
+.accordion-content{
+    display: none;
+}
+/* con il click + js aggiungiamo la classe active */
+.accordion-content.active{
+    display: block;
+}
+.accordion-content.active p{
+    padding-bottom: 2rem;
+}
+/* CSS per animazione faq*/
+.accordion-content.active p{
+    opacity: 1; /* fallback se non funziona l'animation */
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: 0.6s;
+}
+@keyframes fadeInOpacity{
+    0%{
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
 // ----------- MEDIA 900px ---------------
 
 @media(min-width: 900px){
@@ -968,5 +1063,7 @@ section{
             }
         }
     }
-    
+    .accordion-content.active p{
+        padding: 2rem;
+    }
 }
