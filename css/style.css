@@ -56,6 +56,10 @@ img {
   display: block;
 }
 
+.vertical-menu {
+  display: none;
+}
+
 .logo, #open-menu {
   z-index: 3000;
 }
@@ -1001,6 +1005,28 @@ section {
 }
 
 @media (min-width: 900px) {
+  .vertical-menu {
+    z-index: 1200;
+    padding: 0;
+    display: block;
+    position: fixed;
+    right: 0;
+  }
+  .vertical-menu .active-section {
+    color: #F84D35;
+  }
+  .vertical-menu li {
+    -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+    padding: 1rem;
+  }
+  .vertical-menu li a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #9A9A9A;
+  }
+
   #open-menu, aside, #menu-control {
     display: none;
   }

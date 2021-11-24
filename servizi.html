@@ -10,6 +10,8 @@
     <script type="module" src="js/index.js"></script>
     <script type="module" src="js/accordion.js"></script>
     <script type="module" src="js/slider.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="module" src="js/vertical-menu.js"></script>
 </head>
 <body>
     <label for="menu-control" class="hamburger open-menu closed" id="open-menu">
@@ -79,6 +81,32 @@
                 </a>
             </div>
         </header>
+        <section class="vertical-menu">
+            <nav class="vertical-nav">
+                <ul>
+                    <li>
+                        <a href="#section1">
+                            <p>Scoperta e Analisi</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#section2">
+                            Definizione e Disegno
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#section3">
+                            Prototipi e Testing
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#section4">
+                            Misurazione e Reporting
+                        </a>
+                    </li>
+                </ul>
+            </nav>   
+        </section>
         <main>
             <h1>Progetto la<br>
                 <span>strategia</span> e<br>
@@ -113,7 +141,7 @@
                 <a href="#" id="servizi">Guarda i miei lavori</a>
                 <a href="#" id="lavori">Scopri per chi lavoro</a>
             </div>
-            <section class="scoperta-analisi">
+            <section class="scoperta-analisi content-section" id="section1">
                 <h3 class="label display-desktop">STRATEGIA</h3>
                 <h2 class="display-desktop">Scoperta<br> e Analisi</h2>
                 <h2 class="display-mobile">Attività strategiche e di esperienza</h2>
@@ -204,7 +232,7 @@
                 <h2><a href="#analisi" class="accordion-toggle">Analisi Qualitative e Quantitative</a></h2>
                 <div class="accordion-content" id="analisi"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ipsa sint nam sit explicabo magnam, vel ex illo recusandae facere?</p></div>
             </section>
-            <section class="scoperta-analisi">
+            <section class="scoperta-analisi content-section" id="section2">
                 <h3 class="label display-desktop">FASE STRATEGICA</h3>
                 <h2 class="display-desktop">Definizione<br> e Disegno</h2>
                 <svg class="triangles display-desktop" width="920" height="573" viewBox="0 0 920 573" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -229,7 +257,7 @@
                     <div class="accordion-content" id="wireframing"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ipsa sint nam sit explicabo magnam, vel ex illo recusandae facere?</p></div>
                 </section>
             </section>
-            <section class="scoperta-analisi">
+            <section class="scoperta-analisi content-section" id="section3">
                 <h3 class="label display-desktop">FASE DI ESPERIENZA</h3>
                 <h2 class="display-desktop">Prototipazione<br> e Testing</h2>
                 <svg class="triangles display-desktop" width="920" height="573" viewBox="0 0 920 573" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -273,7 +301,7 @@
     </section>
     <div class="pagina servizi">
         <main>
-            <section class="scoperta-analisi">
+            <section class="scoperta-analisi content-section" id="section4">
                 <h3 class="label display-desktop">SOLUZIONE UNICA PER STARTUP O PRIVATI</h3>
                 <h2 class="display-desktop">Design Sprint</h2>
                 <svg class="triangles display-desktop" width="920" height="573" viewBox="0 0 920 573" fill="none" xmlns="http://www.w3.org/2000/svg">

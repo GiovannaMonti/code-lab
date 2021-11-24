@@ -8,7 +8,9 @@
 .display-mobile{
     display: block;
 }
-
+.vertical-menu{
+    display: none;
+}
 // HEADER MOBILE
 .logo, #open-menu{
     z-index: 3000;
@@ -655,6 +657,25 @@ section{
 // ----------- MEDIA 900px ---------------
 
 @media(min-width: 900px){
+    .vertical-menu{
+        z-index: 1200;
+        padding: 0;
+        display: block;
+        position: fixed;
+        right: 0;
+        .active-section{
+            color: $red;
+        }
+        li{
+            writing-mode:vertical-rl;
+            padding: 1rem;
+            a{
+                font-size: .9rem;
+                text-decoration: none;
+                color: $grey;
+            }
+        }
+    }
     #open-menu, aside, #menu-control{
         display: none;
     }

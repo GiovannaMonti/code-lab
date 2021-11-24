@@ -10,6 +10,8 @@
     <script type="module" src="js/index.js"></script>
     <script type="module" src="js/accordion.js"></script>
     <script type="module" src="js/slider.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="module" src="js/vertical-menu.js"></script>
 </head>
 <body>
     <label for="menu-control" class="hamburger open-menu closed" id="open-menu">
@@ -79,6 +81,22 @@
                 </a>
             </div>
         </header>
+        <section class="vertical-menu">
+            <nav class="vertical-nav">
+                <ul>
+                    <li>
+                        <a href="#section1">
+                            Come collaboro
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#section2">
+                            Agenzie
+                        </a>
+                    </li>
+                </ul>
+            </nav>   
+        </section>
         <main>
             <h1>Collaboro con <span>agenzie</span> digitali, <span>startup</span> e <span>aziende</span> italiane ed estere
             </h1>
@@ -111,6 +129,7 @@
                 <img class="display-mobile mobile-logo-group" src="img/mobile-logo-group.png" alt="brands">
             </section>
             <section class="come-collaboro">
+                <div class="content-section" id="section1">
                 <h2>Come collaboro?</h2>
                 <div class="desc display-desktop">
                     <p>Organizzando meeting schedulati e definiti con uno scopo ben definito.<br>
@@ -174,7 +193,8 @@
                         </article>
                     </div>
                 </div>
-                <section class="agenzie-digitali display-desktop">
+                </div>
+                <section class="agenzie-digitali display-desktop content-section" id="section2">
                     <h2>Agenzie Digitali</h2>
                     <p>Collaboro con alcune agenzie su progetti di piccole e medie dimensioni, gestendo il mio tempo in maniera autonoma, e se necessario raggiungendo l’agenzia per il corso del progetto. Visto il numero di richieste per progetti non posso lavorare per oltre i 3 mesi su uno stesso progetto.</p>
                     <h3 class="label display-desktop">attività realizzate per le agenzie</h3>
