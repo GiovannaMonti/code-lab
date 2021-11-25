@@ -326,6 +326,7 @@ footer #dev span {
   cursor: pointer;
 }
 footer .social {
+  z-index: 1300;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -652,6 +653,20 @@ section {
   color: #9A9A9A;
 }
 
+.pagina.servizi .dashed-circle {
+  -webkit-animation: dash 30s linear infinite;
+          animation: dash 30s linear infinite;
+}
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
 .pagina.servizi h1 {
   padding-bottom: 2rem;
 }
@@ -694,6 +709,15 @@ section {
   color: #0C0B0B;
 }
 
+.pagina.collaborazione .dashed-circle {
+  -webkit-animation: dash 30s linear infinite;
+          animation: dash 30s linear infinite;
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
 .pagina.collaborazione span {
   color: #F84D35;
 }
@@ -990,7 +1014,7 @@ section {
   height: 100%;
   width: 200%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 10px;
   pointer-events: none;
   -webkit-transition: 0s ease-in;
@@ -998,6 +1022,10 @@ section {
 }
 .slider-inner img {
   min-width: 100%;
+}
+
+.alcuni-progetti .slider-inner {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .project-label {
@@ -1011,6 +1039,10 @@ section {
     display: block;
     position: fixed;
     right: 0;
+    top: 122.5px;
+  }
+  .vertical-menu nav {
+    height: calc(100vh - 122.5px);
   }
   .vertical-menu .active-section {
     color: #F84D35;
@@ -1308,6 +1340,10 @@ section {
     left: calc(50% - 1056px/2);
     z-index: 0;
   }
+  .motto .dashed-circle {
+    -webkit-animation: dash 30s linear infinite;
+            animation: dash 30s linear infinite;
+  }
 
   .motto.display-mobile {
     display: none;
@@ -1318,6 +1354,10 @@ section {
     color: #9A9A9A;
   }
 
+  .pagina.servizi .dashed-circle {
+    -webkit-animation: dash 30s linear infinite;
+            animation: dash 30s linear infinite;
+  }
   .pagina.servizi h1 {
     padding-bottom: 5rem;
   }
@@ -1351,6 +1391,20 @@ section {
     padding: 3rem 0;
     margin-left: auto;
     margin-right: auto;
+  }
+  @-webkit-keyframes dash {
+    to {
+      stroke-dashoffset: 1000;
+    }
+  }
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 1000;
+    }
+  }
+  .pagina.servizi .scoperta-analisi .dashed-triangle {
+    -webkit-animation: dash 30s linear infinite;
+            animation: dash 30s linear infinite;
   }
   .pagina.servizi .scoperta-analisi .desc {
     text-align: center;

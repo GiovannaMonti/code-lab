@@ -174,6 +174,7 @@ footer{
         }
     }
     .social{
+        z-index: 1300;
         display: flex;
         align-items: center;
         gap: 1.5rem;
@@ -386,6 +387,14 @@ section{
 
 // SERVIZI
 .pagina.servizi{
+    .dashed-circle{
+        animation: dash 30s linear infinite;    
+    }
+    @keyframes dash {
+        to {
+          stroke-dashoffset: 1000;
+        }
+    }
     h1{
         padding-bottom: 2rem;
     }
@@ -421,6 +430,14 @@ section{
     }
 }
 .pagina.collaborazione{
+    .dashed-circle{
+        animation: dash 30s linear infinite;    
+    }
+    @keyframes dash {
+        to {
+          stroke-dashoffset: 1000;
+        }
+    }
     span{
         color: $red;
     }
@@ -642,13 +659,16 @@ section{
     height: 100%;
     width: 200%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 10px;
     pointer-events: none;
     transition: 0s ease-in;
     img{
         min-width: 100%;
     }
+}
+.alcuni-progetti .slider-inner{
+    grid-template-columns: repeat(4, 1fr);
 }
 .project-label{
     color: $red;
@@ -663,6 +683,10 @@ section{
         display: block;
         position: fixed;
         right: 0;
+        top: 122.5px;
+        nav{
+            height: calc(100vh - 122.5px);
+        }
         .active-section{
             color: $red;
         }
@@ -885,6 +909,9 @@ section{
             left: calc(50% - 1056px/2);
             z-index: 0;
         }
+        .dashed-circle{
+            animation: dash 30s linear infinite;    
+        }
     }
     .motto.display-mobile{
         display: none;
@@ -896,6 +923,9 @@ section{
 
     // SERVIZI
     .pagina.servizi{
+        .dashed-circle{
+            animation: dash 30s linear infinite;    
+        }
         h1{
             padding-bottom: 5rem;
         }
@@ -925,6 +955,16 @@ section{
                 padding: 3rem 0;
                 margin-left: auto;
                 margin-right: auto;
+            }
+            
+            @keyframes dash {
+                to {
+                  stroke-dashoffset: 1000;
+                }
+            }
+              
+            .dashed-triangle{
+                animation: dash 30s linear infinite;
             }
             .desc{
                 text-align: center;

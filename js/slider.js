@@ -46,6 +46,11 @@ slider.addEventListener("touchmove", (e) => {
   checkBoundary()
 })
 
+slider.addEventListener("wheel", (evt) => {
+  evt.preventDefault()
+  slider.scrollLeft += evt.deltaY
+})
+
 function checkBoundary() {
   let outer = slider.getBoundingClientRect()
   let inner = innerSlider.getBoundingClientRect()
