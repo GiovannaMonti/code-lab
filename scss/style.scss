@@ -1021,6 +1021,7 @@ section{
         }
     }
     .pagina.collaborazione{
+        overflow-x: hidden;
         .brand{
             padding-bottom: 8rem;
             .label{
@@ -1127,7 +1128,7 @@ section{
         }
         .alcuni-progetti{
             text-align: left;
-            padding-left: 0;
+            padding: 0;
         }
     }
     .slide-img img{
@@ -1163,6 +1164,9 @@ section{
     }
     .slider-inner {
         gap: 30px;
+    }
+    .alcuni-progetti .slider{
+        min-height: 550px;
     }
 }
 @media(min-width: 1700px){
