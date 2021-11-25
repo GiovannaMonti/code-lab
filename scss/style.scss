@@ -948,7 +948,7 @@ section{
         .scoperta-analisi{
             text-align: center;
             .label{
-                font-weight: bold;
+                font-weight: normal;
                 color: $red;
             }
             .triangles{
@@ -1004,7 +1004,7 @@ section{
                     gap: 4rem;
                 }
                 .label{
-                    font-weight: bold;
+                    font-weight: normal;
                     letter-spacing: .8px;
                     padding-bottom: .5rem;
                 }
@@ -1024,6 +1024,7 @@ section{
         .brand{
             padding-bottom: 8rem;
             .label{
+                @include body-m;
                 letter-spacing: 2px;
                 padding-bottom: 2rem;
             }
@@ -1072,7 +1073,7 @@ section{
                 letter-spacing: 2px;
                 padding-bottom: 2rem;
                 color: $diesel;
-                font-weight: bold;
+                font-weight: normal;
                 text-transform: uppercase;
             }
             .attivita{

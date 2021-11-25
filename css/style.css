@@ -1384,7 +1384,7 @@ section {
     text-align: center;
   }
   .pagina.servizi .scoperta-analisi .label {
-    font-weight: bold;
+    font-weight: normal;
     color: #F84D35;
   }
   .pagina.servizi .scoperta-analisi .triangles {
@@ -1459,7 +1459,7 @@ section {
     gap: 4rem;
   }
   .pagina.servizi .kickoff .grid .label {
-    font-weight: bold;
+    font-weight: normal;
     letter-spacing: 0.8px;
     padding-bottom: 0.5rem;
   }
@@ -1479,6 +1479,10 @@ section {
     padding-bottom: 8rem;
   }
   .pagina.collaborazione .brand .label {
+    font-family: "ObjectSans-Regular";
+    font-weight: normal;
+    letter-spacing: 0.4px;
+    line-height: 29px;
     letter-spacing: 2px;
     padding-bottom: 2rem;
   }
@@ -1540,7 +1544,7 @@ section {
     letter-spacing: 2px;
     padding-bottom: 2rem;
     color: #0C0B0B;
-    font-weight: bold;
+    font-weight: normal;
     text-transform: uppercase;
   }
   .pagina.collaborazione .agenzie-digitali .attivita {
