@@ -1,5 +1,17 @@
 {
+  "scripts": {
+    "start": "parcel index.html"
+  },
   "devDependencies": {
-    "parcel": "^2.4.0"
+    "@parcel/packager-raw-url": "^2.4.0",
+    "@parcel/transformer-sass": "^2.4.0",
+    "@parcel/transformer-webmanifest": "^2.4.0",
+    "parcel": "^2.4.0",
+    "posthtml-include": "^1.7.2"
+  },
+  "dependencies": {
+    "@barba/core": "^2.9.7",
+    "gsap": "^3.9.1",
+    "locomotive-scroll": "^4.1.4"
   }
 }
